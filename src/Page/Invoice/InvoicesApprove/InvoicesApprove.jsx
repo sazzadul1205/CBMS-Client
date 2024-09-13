@@ -6,7 +6,8 @@ import {
   FaClipboardList,
 } from "react-icons/fa6";
 import { IoEyeOutline, IoHomeOutline } from "react-icons/io5";
-import invoiceData from "./invoiceData.json";
+import invoiceData from "../../../data/Data.json";
+import ViewApprovedInvoice from "./ViewApprovedInvoice/ViewApprovedInvoice";
 
 const ITEMS_PER_PAGE = 10;
 
@@ -14,11 +15,15 @@ const InvoicesApprove = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [goToPage, setGoToPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
+  const [template, setTemplate] = useState(""); // Track template selection
+  const [selectedInvoice, setSelectedInvoice] = useState(null);
 
-  // Filtered invoices based on search term
-  const filteredInvoices = invoiceData.filter((invoice) =>
-    invoice.customerName.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Filtered invoices based on status, search term, and template
+  const filteredInvoices = invoiceData
+    .filter((invoice) => invoice.status === "Pending")
+    .filter((invoice) =>
+      invoice.customerName.toLowerCase().includes(searchTerm.toLowerCase())
+    )
 
   // Calculate paginated data
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -27,7 +32,7 @@ const InvoicesApprove = () => {
     startIndex + ITEMS_PER_PAGE
   );
 
-  // Calculate page numbers
+  // Calculate total pages
   const totalPages = Math.ceil(filteredInvoices.length / ITEMS_PER_PAGE);
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
@@ -42,16 +47,17 @@ const InvoicesApprove = () => {
   // Handle "Go to" input change
   const handleGoToPageChange = (event) => {
     const value = parseInt(event.target.value, 10);
-    if (!isNaN(value)) {
+    if (!isNaN(value) && value > 0 && value <= totalPages) {
       setGoToPage(value);
+      handlePageChange(value);
     }
   };
 
   // SweetAlert confirm function for approval
-  const handleApprove = () => {
+  const handleApprove = (invoiceId) => {
     Swal.fire({
       title: "Are you sure?",
-      text: "Do you want to approve this invoice?",
+      text: `Do you want to approve invoice #${invoiceId}?`,
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: "Yes, approve it!",
@@ -59,11 +65,35 @@ const InvoicesApprove = () => {
       reverseButtons: true,
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire("Approved!", "The invoice has been approved.", "success");
+        Swal.fire(
+          "Approved!",
+          `Invoice #${invoiceId} has been approved.`,
+          "success"
+        );
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire("Cancelled", "The invoice approval was cancelled.", "error");
       }
     });
+  };
+
+  // Open Modal function
+  const openModal = (invoice) => {
+    setSelectedInvoice(invoice);
+    const modal = document.getElementById("View_Invoice");
+    if (modal) modal.showModal();
+  };
+
+  // Calculate total amount in BDT and VAT
+  const calculateAmount = (invoice) => {
+    const exchangeRate = 117.0; // Exchange rate
+    const totalAmountInUSD = invoice.sale.reduce(
+      (total, sale) => total + sale.AmountInUSD,
+      0
+    );
+    const totalAmountInBDT = totalAmountInUSD * exchangeRate;
+    const vat = totalAmountInBDT * 0.05; // VAT at 5%
+    const netTotalInBDT = totalAmountInBDT + vat;
+    return { totalAmountInBDT, vat, netTotalInBDT };
   };
 
   return (
@@ -86,13 +116,15 @@ const InvoicesApprove = () => {
       {/* Template */}
       <div className="my-5">
         <p className="pb-2">
-          Template Name <span className="text-red-500 ">*</span>
+          Template Name <span className="text-red-500">*</span>
         </p>
         <div>
-          <select className="select select-bordered w-2/3 bg-white">
-            <option disabled selected>
-              Select ...
-            </option>
+          <select
+            className="select select-bordered w-2/3 bg-white"
+            value={template}
+            onChange={(e) => setTemplate(e.target.value)}
+          >
+            <option value="">Select ...</option>
             <option>Management Fees</option>
             <option>Transaction Charges</option>
             <option>Service Fees</option>
@@ -128,7 +160,7 @@ const InvoicesApprove = () => {
                 <th>Invoice Date</th>
                 <th>Customer Name</th>
                 <th>Template Name</th>
-                <th>Total Amount</th>
+                <th>Total Amount (BDT)</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -140,35 +172,46 @@ const InvoicesApprove = () => {
                   </td>
                 </tr>
               ) : (
-                paginatedData.map((invoice) => (
-                  <tr key={invoice.id}>
-                    <th>
-                      <label>
-                        <input type="checkbox" className="checkbox" />
-                      </label>
-                    </th>
-                    <td>{invoice.date}</td>
-                    <td>{invoice.customerName}</td>
-                    <td>{invoice.templateName}</td>
-                    <td>{invoice.totalAmount}</td>
-                    <td className="flex gap-2">
-                      <button className="flex gap-2 py-2 px-5 border-2 text-gray-500 border-gray-500 text-[15px] items-center hover:bg-gray-500 hover:text-white">
-                        <IoEyeOutline /> View
-                      </button>
-                      <button
-                        className="flex gap-2 py-2 px-5 bg-blue-500 text-[15px] items-center text-white hover:bg-blue-700"
-                        onClick={() => handleApprove(invoice.id)}
-                      >
-                        <FaClipboardList /> Approve
-                      </button>
-                    </td>
-                  </tr>
-                ))
+                paginatedData.map((invoice) => {
+                  const { netTotalInBDT } = calculateAmount(invoice);
+                  return (
+                    <tr key={invoice.id}>
+                      <th>
+                        <label>
+                          <input type="checkbox" className="checkbox" />
+                        </label>
+                      </th>
+                      <td>{invoice.date}</td>
+                      <td>{invoice.customerName}</td>
+                      <td>{invoice.templateName}</td>
+                      <td>{netTotalInBDT.toFixed(2)}</td>
+                      <td className="flex gap-2">
+                        <button
+                          className="flex gap-2 py-2 px-5 border-2 text-gray-500 border-gray-500 text-[15px] items-center hover:bg-gray-500 hover:text-white"
+                          onClick={() => openModal(invoice)}
+                        >
+                          <IoEyeOutline /> View
+                        </button>
+                        <button
+                          className="flex gap-2 py-2 px-5 bg-blue-500 text-[15px] items-center text-white hover:bg-blue-700"
+                          onClick={() => handleApprove(invoice.id)}
+                        >
+                          <FaClipboardList /> Approve
+                        </button>
+                      </td>
+                      {/* Modal */}
+                      <dialog id="View_Invoice" className="modal">
+                        {selectedInvoice && (
+                          <ViewApprovedInvoice invoice={selectedInvoice} />
+                        )}
+                      </dialog>
+                    </tr>
+                  );
+                })
               )}
             </tbody>
           </table>
-
-          <div className="flex justify-between items-center mt-4">
+          <div className="flex justify-between items-center">
             {/* Go To section */}
             <div className="flex items-center">
               <p>Go</p>
@@ -184,7 +227,6 @@ const InvoicesApprove = () => {
                 Page {currentPage} of {totalPages}
               </p>
             </div>
-
             {/* Pagination section */}
             <div className="py-4 px-5 flex gap-2 items-center">
               <button
@@ -202,8 +244,8 @@ const InvoicesApprove = () => {
                 .map((page) => (
                   <button
                     key={page}
-                    className={`bg-gray-100 p-1 px-3 text-lg ${
-                      currentPage === page ? "bg-blue-500 text-white" : ""
+                    className={`btn ${
+                      page === currentPage ? "btn-primary" : "btn-outline"
                     }`}
                     onClick={() => handlePageChange(page)}
                   >

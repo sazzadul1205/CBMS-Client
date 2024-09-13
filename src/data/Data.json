@@ -10,12 +10,26 @@
       {
         "SaleNumber": 1,
         "Month": "August, 2024",
-        "AmountInUSD": 1200.0
+        "AmountInUSD": 1200.0,
+        "ProductType": "Software",
+        "ProductName": "Business Suite",
+        "Description": "Comprehensive business management suite.",
+        "Quantity": 20,
+        "UnitPrice": 60.0,
+        "TotalPrice": 1200.0,
+        "VAT (%)": 15
       },
       {
         "SaleNumber": 2,
         "Month": "August, 2024",
-        "AmountInUSD": 100.0
+        "AmountInUSD": 100.0,
+        "ProductType": "Subscription",
+        "ProductName": "Monthly Access",
+        "Description": "Monthly subscription for online access.",
+        "Quantity": 10,
+        "UnitPrice": 10.0,
+        "TotalPrice": 100.0,
+        "VAT (%)": 15
       }
     ]
   },
@@ -30,7 +44,14 @@
       {
         "SaleNumber": 1,
         "Month": "August, 2024",
-        "AmountInUSD": 750.0
+        "AmountInUSD": 750.0,
+        "ProductType": "Consulting",
+        "ProductName": "Financial Consulting",
+        "Description": "Expert advice on financial management.",
+        "Quantity": 1,
+        "UnitPrice": 750.0,
+        "TotalPrice": 750.0,
+        "VAT (%)": 15
       }
     ]
   },
@@ -45,12 +66,26 @@
       {
         "SaleNumber": 1,
         "Month": "August, 2024",
-        "AmountInUSD": 900.0
+        "AmountInUSD": 900.0,
+        "ProductType": "Software",
+        "ProductName": "Accounting Pro",
+        "Description": "Advanced accounting software for enterprises.",
+        "Quantity": 15,
+        "UnitPrice": 60.0,
+        "TotalPrice": 900.0,
+        "VAT (%)": 15
       },
       {
         "SaleNumber": 2,
         "Month": "August, 2024",
-        "AmountInUSD": 150.0
+        "AmountInUSD": 150.0,
+        "ProductType": "License",
+        "ProductName": "Extended License",
+        "Description": "Extended software license for additional users.",
+        "Quantity": 5,
+        "UnitPrice": 30.0,
+        "TotalPrice": 150.0,
+        "VAT (%)": 15
       }
     ]
   },
@@ -65,7 +100,14 @@
       {
         "SaleNumber": 1,
         "Month": "August, 2024",
-        "AmountInUSD": 1000.0
+        "AmountInUSD": 1000.0,
+        "ProductType": "Training",
+        "ProductName": "Employee Training",
+        "Description": "Training program for new employees.",
+        "Quantity": 10,
+        "UnitPrice": 100.0,
+        "TotalPrice": 1000.0,
+        "VAT (%)": 15
       }
     ]
   },
@@ -80,7 +122,14 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 850.0
+        "AmountInUSD": 850.0,
+        "ProductType": "Software",
+        "ProductName": "CRM System",
+        "Description": "Customer Relationship Management system.",
+        "Quantity": 17,
+        "UnitPrice": 50.0,
+        "TotalPrice": 850.0,
+        "VAT (%)": 15
       }
     ]
   },
@@ -95,7 +144,14 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1200.0
+        "AmountInUSD": 1200.0,
+        "ProductType": "Consulting",
+        "ProductName": "IT Consulting",
+        "Description": "IT consulting services for infrastructure improvement.",
+        "Quantity": 1,
+        "UnitPrice": 1200.0,
+        "TotalPrice": 1200.0,
+        "VAT (%)": 15
       }
     ]
   },
@@ -110,12 +166,26 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1700.0
+        "AmountInUSD": 1700.0,
+        "ProductType": "Software",
+        "ProductName": "Enterprise Suite",
+        "Description": "Complete suite for enterprise operations.",
+        "Quantity": 20,
+        "UnitPrice": 85.0,
+        "TotalPrice": 1700.0,
+        "VAT (%)": 15
       },
       {
         "SaleNumber": 2,
         "Month": "September, 2024",
-        "AmountInUSD": 600.0
+        "AmountInUSD": 600.0,
+        "ProductType": "Subscription",
+        "ProductName": "Annual Support",
+        "Description": "Annual technical support subscription.",
+        "Quantity": 12,
+        "UnitPrice": 50.0,
+        "TotalPrice": 600.0,
+        "VAT (%)": 15
       }
     ]
   },
@@ -130,7 +200,14 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1300.0
+        "AmountInUSD": 1300.0,
+        "ProductType": "Training",
+        "ProductName": "Advanced Training",
+        "Description": "Advanced training program for staff.",
+        "Quantity": 10,
+        "UnitPrice": 130.0,
+        "TotalPrice": 1300.0,
+        "VAT (%)": 15
       }
     ]
   },
@@ -145,7 +222,14 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 950.0
+        "AmountInUSD": 950.0,
+        "ProductType": "Software",
+        "ProductName": "Project Management",
+        "Description": "Software for managing projects.",
+        "Quantity": 19,
+        "UnitPrice": 50.0,
+        "TotalPrice": 950.0,
+        "VAT (%)": 15
       }
     ]
   },
@@ -160,10 +244,18 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1200.0
+        "AmountInUSD": 1200.0,
+        "ProductType": "Consulting",
+        "ProductName": "Legal Consulting",
+        "Description": "Consulting services for legal matters.",
+        "Quantity": 1,
+        "UnitPrice": 1200.0,
+        "TotalPrice": 1200.0,
+        "VAT (%)": 15
       }
     ]
   },
+
   {
     "id": "2408UBPLC19",
     "date": "07-09-24",
@@ -175,7 +267,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1100.0
+        "AmountInUSD": 1100.0,
+        "productType": "Electronics",
+        "productName": "Laptop",
+        "description": "High-performance laptop with 16GB RAM and 512GB SSD.",
+        "quantity": 10,
+        "unitPrice": 1000.0,
+        "totalPrice": 10000.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 11500.0
       }
     ]
   },
@@ -190,7 +290,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1800.0
+        "AmountInUSD": 1800.0,
+        "productType": "Furniture",
+        "productName": "Office Chair",
+        "description": "Ergonomic office chair with adjustable height and lumbar support.",
+        "quantity": 15,
+        "unitPrice": 60.0,
+        "totalPrice": 900.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 1035.0
       }
     ]
   },
@@ -205,7 +313,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1000.0
+        "AmountInUSD": 1000.0,
+        "productType": "Stationery",
+        "productName": "Printer Paper",
+        "description": "Ream of A4 printer paper, 500 sheets.",
+        "quantity": 50,
+        "unitPrice": 10.0,
+        "totalPrice": 500.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 575.0
       }
     ]
   },
@@ -220,7 +336,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 950.0
+        "AmountInUSD": 950.0,
+        "productType": "Software",
+        "productName": "Antivirus Subscription",
+        "description": "1-year subscription for antivirus software.",
+        "quantity": 20,
+        "unitPrice": 50.0,
+        "totalPrice": 1000.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 1150.0
       }
     ]
   },
@@ -235,7 +359,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1100.0
+        "AmountInUSD": 1100.0,
+        "productType": "Electronics",
+        "productName": "Desktop Computer",
+        "description": "High-speed desktop computer with 32GB RAM and 1TB HDD.",
+        "quantity": 8,
+        "unitPrice": 800.0,
+        "totalPrice": 6400.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 7360.0
       }
     ]
   },
@@ -250,7 +382,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1300.0
+        "AmountInUSD": 1300.0,
+        "productType": "Furniture",
+        "productName": "Meeting Table",
+        "description": "Large conference table with glass top and metal legs.",
+        "quantity": 5,
+        "unitPrice": 250.0,
+        "totalPrice": 1250.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 1437.5
       }
     ]
   },
@@ -265,7 +405,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1500.0
+        "AmountInUSD": 1500.0,
+        "productType": "Software",
+        "productName": "Project Management Tool",
+        "description": "License for project management software, 1-year access.",
+        "quantity": 12,
+        "unitPrice": 100.0,
+        "totalPrice": 1200.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 1380.0
       }
     ]
   },
@@ -280,12 +428,28 @@
       {
         "SaleNumber": 1,
         "Month": "August, 2024",
-        "AmountInUSD": 1200.0
+        "AmountInUSD": 1200.0,
+        "productType": "Electronics",
+        "productName": "Printer",
+        "description": "High-resolution laser printer.",
+        "quantity": 5,
+        "unitPrice": 200.0,
+        "totalPrice": 1000.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 1150.0
       },
       {
         "SaleNumber": 2,
         "Month": "August, 2024",
-        "AmountInUSD": 100.0
+        "AmountInUSD": 100.0,
+        "productType": "Stationery",
+        "productName": "Desk Organizer",
+        "description": "Wooden desk organizer with multiple compartments.",
+        "quantity": 10,
+        "unitPrice": 10.0,
+        "totalPrice": 100.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 115.0
       }
     ]
   },
@@ -300,7 +464,15 @@
       {
         "SaleNumber": 1,
         "Month": "August, 2024",
-        "AmountInUSD": 750.0
+        "AmountInUSD": 750.0,
+        "productType": "Office Supplies",
+        "productName": "Whiteboard",
+        "description": "Large whiteboard with mounting kit.",
+        "quantity": 3,
+        "unitPrice": 250.0,
+        "totalPrice": 750.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 862.5
       }
     ]
   },
@@ -315,15 +487,32 @@
       {
         "SaleNumber": 1,
         "Month": "August, 2024",
-        "AmountInUSD": 900.0
+        "AmountInUSD": 900.0,
+        "productType": "Electronics",
+        "productName": "Monitor",
+        "description": "27-inch 4K Ultra HD monitor.",
+        "quantity": 4,
+        "unitPrice": 200.0,
+        "totalPrice": 800.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 920.0
       },
       {
         "SaleNumber": 2,
         "Month": "August, 2024",
-        "AmountInUSD": 150.0
+        "AmountInUSD": 150.0,
+        "productType": "Furniture",
+        "productName": "Bookshelf",
+        "description": "Wooden bookshelf with 5 shelves.",
+        "quantity": 2,
+        "unitPrice": 75.0,
+        "totalPrice": 150.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 172.5
       }
     ]
   },
+
   {
     "id": "2408UBPLC12",
     "date": "31-08-24",
@@ -335,7 +524,15 @@
       {
         "SaleNumber": 1,
         "Month": "August, 2024",
-        "AmountInUSD": 1000.0
+        "AmountInUSD": 1000.0,
+        "productType": "Electronics",
+        "productName": "Smartphone",
+        "description": "Latest model smartphone with high-resolution camera.",
+        "quantity": 5,
+        "unitPrice": 200.0,
+        "totalPrice": 1000.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 1150.0
       }
     ]
   },
@@ -350,7 +547,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 850.0
+        "AmountInUSD": 850.0,
+        "productType": "Office Supplies",
+        "productName": "Whiteboard Markers",
+        "description": "Set of 10 assorted whiteboard markers.",
+        "quantity": 20,
+        "unitPrice": 5.0,
+        "totalPrice": 100.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 115.0
       }
     ]
   },
@@ -365,7 +570,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1200.0
+        "AmountInUSD": 1200.0,
+        "productType": "Furniture",
+        "productName": "Executive Desk",
+        "description": "Large executive desk with storage drawers.",
+        "quantity": 2,
+        "unitPrice": 600.0,
+        "totalPrice": 1200.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 1380.0
       }
     ]
   },
@@ -380,12 +593,28 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1700.0
+        "AmountInUSD": 1700.0,
+        "productType": "Electronics",
+        "productName": "Projector",
+        "description": "High-definition projector for presentations.",
+        "quantity": 10,
+        "unitPrice": 170.0,
+        "totalPrice": 1700.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 1955.0
       },
       {
         "SaleNumber": 2,
         "Month": "September, 2024",
-        "AmountInUSD": 600.0
+        "AmountInUSD": 600.0,
+        "productType": "Furniture",
+        "productName": "Office Chairs",
+        "description": "Set of 10 ergonomic office chairs.",
+        "quantity": 10,
+        "unitPrice": 60.0,
+        "totalPrice": 600.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 690.0
       }
     ]
   },
@@ -400,7 +629,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1300.0
+        "AmountInUSD": 1300.0,
+        "productType": "Electronics",
+        "productName": "Tablet",
+        "description": "High-performance tablet with keyboard attachment.",
+        "quantity": 8,
+        "unitPrice": 162.5,
+        "totalPrice": 1300.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 1495.0
       }
     ]
   },
@@ -415,7 +652,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 950.0
+        "AmountInUSD": 950.0,
+        "productType": "Office Supplies",
+        "productName": "Desk Lamps",
+        "description": "LED desk lamps with adjustable brightness.",
+        "quantity": 15,
+        "unitPrice": 63.33,
+        "totalPrice": 950.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 1092.5
       }
     ]
   },
@@ -430,7 +675,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1200.0
+        "AmountInUSD": 1200.0,
+        "productType": "Furniture",
+        "productName": "Conference Table",
+        "description": "Large conference table with seating for 12.",
+        "quantity": 3,
+        "unitPrice": 400.0,
+        "totalPrice": 1200.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 1380.0
       }
     ]
   },
@@ -445,7 +698,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1100.0
+        "AmountInUSD": 1100.0,
+        "productType": "Electronics",
+        "productName": "Laptop",
+        "description": "High-performance laptop with 16GB RAM and 512GB SSD.",
+        "quantity": 10,
+        "unitPrice": 1000.0,
+        "totalPrice": 10000.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 11500.0
       }
     ]
   },
@@ -460,7 +721,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1800.0
+        "AmountInUSD": 1800.0,
+        "productType": "Furniture",
+        "productName": "Office Chair",
+        "description": "Ergonomic office chair with adjustable height and lumbar support.",
+        "quantity": 15,
+        "unitPrice": 60.0,
+        "totalPrice": 900.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 1035.0
       }
     ]
   },
@@ -475,10 +744,19 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1000.0
+        "AmountInUSD": 1000.0,
+        "productType": "Stationery",
+        "productName": "Printer Paper",
+        "description": "Ream of A4 printer paper, 500 sheets.",
+        "quantity": 50,
+        "unitPrice": 10.0,
+        "totalPrice": 500.0,
+        "VAT": 15,
+        "AmountInUSDWithVAT": 575.0
       }
     ]
   },
+
   {
     "id": "2408UBPLC22",
     "date": "10-09-24",
@@ -490,7 +768,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 950.0
+        "AmountInUSD": 950.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 950.0,
+        "totalPrice": 950.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 950.0
       }
     ]
   },
@@ -505,7 +791,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1100.0
+        "AmountInUSD": 1100.0,
+        "productType": "Financial Services",
+        "productName": "Bulk Payment Fee",
+        "description": "Fee for bulk payments.",
+        "quantity": 1,
+        "unitPrice": 1100.0,
+        "totalPrice": 1100.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1100.0
       }
     ]
   },
@@ -520,7 +814,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1300.0
+        "AmountInUSD": 1300.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1300.0,
+        "totalPrice": 1300.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1300.0
       }
     ]
   },
@@ -535,7 +837,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1500.0
+        "AmountInUSD": 1500.0,
+        "productType": "Financial Services",
+        "productName": "Bulk Payment Fee",
+        "description": "Fee for bulk payments.",
+        "quantity": 1,
+        "unitPrice": 1500.0,
+        "totalPrice": 1500.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1500.0
       }
     ]
   },
@@ -550,7 +860,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1350.0
+        "AmountInUSD": 1350.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1350.0,
+        "totalPrice": 1350.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1350.0
       }
     ]
   },
@@ -565,7 +883,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 800.0
+        "AmountInUSD": 800.0,
+        "productType": "Financial Services",
+        "productName": "Bulk Payment Fee",
+        "description": "Fee for bulk payments.",
+        "quantity": 1,
+        "unitPrice": 800.0,
+        "totalPrice": 800.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 800.0
       }
     ]
   },
@@ -580,7 +906,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1550.0
+        "AmountInUSD": 1550.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1550.0,
+        "totalPrice": 1550.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1550.0
       }
     ]
   },
@@ -595,12 +929,28 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1700.0
+        "AmountInUSD": 1700.0,
+        "productType": "Financial Services",
+        "productName": "Bulk Payment Fee",
+        "description": "Fee for bulk payments.",
+        "quantity": 1,
+        "unitPrice": 1700.0,
+        "totalPrice": 1700.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1700.0
       },
       {
         "SaleNumber": 2,
         "Month": "September, 2024",
-        "AmountInUSD": 250.0
+        "AmountInUSD": 250.0,
+        "productType": "Financial Services",
+        "productName": "Additional Fee",
+        "description": "Additional fee for bulk transactions.",
+        "quantity": 1,
+        "unitPrice": 250.0,
+        "totalPrice": 250.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 250.0
       }
     ]
   },
@@ -615,7 +965,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1450.0
+        "AmountInUSD": 1450.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1450.0,
+        "totalPrice": 1450.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1450.0
       }
     ]
   },
@@ -630,10 +988,263 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1200.0
+        "AmountInUSD": 1200.0,
+        "productType": "Financial Services",
+        "productName": "Bulk Payment Fee",
+        "description": "Fee for bulk payments.",
+        "quantity": 1,
+        "unitPrice": 1200.0,
+        "totalPrice": 1200.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1200.0
       }
     ]
   },
+
+  {
+    "id": "2408UBPLC22",
+    "date": "10-09-24",
+    "customerName": "Social Islami Bank",
+    "createType": "Single",
+    "status": "Approved",
+    "templateName": "Single Transaction Template",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 950.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 950.0,
+        "totalPrice": 950.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 950.0
+      }
+    ]
+  },
+  {
+    "id": "2408UBPLC23",
+    "date": "11-09-24",
+    "customerName": "First Security Islami Bank",
+    "createType": "Bulk",
+    "status": "Pending",
+    "templateName": "Corporate Bulk Payment",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1100.0,
+        "productType": "Corporate Services",
+        "productName": "Bulk Payment Processing",
+        "description": "Processing fee for bulk payments.",
+        "quantity": 1,
+        "unitPrice": 1100.0,
+        "totalPrice": 1100.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1100.0
+      }
+    ]
+  },
+  {
+    "id": "2408UBPLC24",
+    "date": "12-09-24",
+    "customerName": "Dutch-Bangla Bank",
+    "createType": "Single",
+    "status": "Approved",
+    "templateName": "Single Transaction Template",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1300.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1300.0,
+        "totalPrice": 1300.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1300.0
+      }
+    ]
+  },
+  {
+    "id": "2408UBPLC25",
+    "date": "13-09-24",
+    "customerName": "IFIC Bank",
+    "createType": "Bulk",
+    "status": "Pending",
+    "templateName": "Corporate Bulk Payment",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1500.0,
+        "productType": "Corporate Services",
+        "productName": "Bulk Payment Processing",
+        "description": "Processing fee for bulk payments.",
+        "quantity": 1,
+        "unitPrice": 1500.0,
+        "totalPrice": 1500.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1500.0
+      }
+    ]
+  },
+  {
+    "id": "2409UBPLC1",
+    "date": "14-09-24",
+    "customerName": "United Commercial Bank",
+    "createType": "Single",
+    "status": "Approved",
+    "templateName": "Single Transaction Template",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1350.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1350.0,
+        "totalPrice": 1350.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1350.0
+      }
+    ]
+  },
+  {
+    "id": "2409UBPLC2",
+    "date": "15-09-24",
+    "customerName": "National Bank",
+    "createType": "Bulk",
+    "status": "Pending",
+    "templateName": "Corporate Bulk Payment",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 800.0,
+        "productType": "Corporate Services",
+        "productName": "Bulk Payment Processing",
+        "description": "Processing fee for bulk payments.",
+        "quantity": 1,
+        "unitPrice": 800.0,
+        "totalPrice": 800.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 800.0
+      }
+    ]
+  },
+  {
+    "id": "2409UBPLC3",
+    "date": "16-09-24",
+    "customerName": "Bank Asia",
+    "createType": "Single",
+    "status": "Approved",
+    "templateName": "Single Transaction Template",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1550.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1550.0,
+        "totalPrice": 1550.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1550.0
+      }
+    ]
+  },
+  {
+    "id": "2409UBPLC4",
+    "date": "17-09-24",
+    "customerName": "Prime Bank",
+    "createType": "Bulk",
+    "status": "Approved",
+    "templateName": "Corporate Bulk Payment",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1700.0,
+        "productType": "Corporate Services",
+        "productName": "Bulk Payment Processing",
+        "description": "Processing fee for bulk payments.",
+        "quantity": 1,
+        "unitPrice": 1700.0,
+        "totalPrice": 1700.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1700.0
+      },
+      {
+        "SaleNumber": 2,
+        "Month": "September, 2024",
+        "AmountInUSD": 250.0,
+        "productType": "Corporate Services",
+        "productName": "Bulk Payment Processing",
+        "description": "Processing fee for bulk payments.",
+        "quantity": 1,
+        "unitPrice": 250.0,
+        "totalPrice": 250.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 250.0
+      }
+    ]
+  },
+  {
+    "id": "2409UBPLC5",
+    "date": "18-09-24",
+    "customerName": "HSBC",
+    "createType": "Single",
+    "status": "Pending",
+    "templateName": "Single Transaction Template",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1450.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1450.0,
+        "totalPrice": 1450.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1450.0
+      }
+    ]
+  },
+  {
+    "id": "2409UBPLC6",
+    "date": "19-09-24",
+    "customerName": "Brac Bank",
+    "createType": "Bulk",
+    "status": "Approved",
+    "templateName": "Corporate Bulk Payment",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1200.0,
+        "productType": "Corporate Services",
+        "productName": "Bulk Payment Processing",
+        "description": "Processing fee for bulk payments.",
+        "quantity": 1,
+        "unitPrice": 1200.0,
+        "totalPrice": 1200.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1200.0
+      }
+    ]
+  },
+
   {
     "id": "2409UBPLC7",
     "date": "20-09-24",
@@ -645,7 +1256,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1700.0
+        "AmountInUSD": 1700.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1700.0,
+        "totalPrice": 1700.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1700.0
       }
     ]
   },
@@ -660,7 +1279,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1500.0
+        "AmountInUSD": 1500.0,
+        "productType": "Financial Services",
+        "productName": "Bulk Transaction Fee",
+        "description": "Bulk transaction fee for corporate payment.",
+        "quantity": 1,
+        "unitPrice": 1500.0,
+        "totalPrice": 1500.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1500.0
       }
     ]
   },
@@ -675,7 +1302,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1000.0
+        "AmountInUSD": 1000.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1000.0,
+        "totalPrice": 1000.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1000.0
       }
     ]
   },
@@ -690,7 +1325,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1300.0
+        "AmountInUSD": 1300.0,
+        "productType": "Financial Services",
+        "productName": "Bulk Payment Processing",
+        "description": "Processing fee for corporate bulk payment.",
+        "quantity": 1,
+        "unitPrice": 1300.0,
+        "totalPrice": 1300.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1300.0
       }
     ]
   },
@@ -705,7 +1348,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1250.0
+        "AmountInUSD": 1250.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1250.0,
+        "totalPrice": 1250.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1250.0
       }
     ]
   },
@@ -720,7 +1371,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1100.0
+        "AmountInUSD": 1100.0,
+        "productType": "Financial Services",
+        "productName": "Bulk Transaction Fee",
+        "description": "Bulk transaction fee for corporate payment.",
+        "quantity": 1,
+        "unitPrice": 1100.0,
+        "totalPrice": 1100.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1100.0
       }
     ]
   },
@@ -735,7 +1394,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1500.0
+        "AmountInUSD": 1500.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1500.0,
+        "totalPrice": 1500.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1500.0
       }
     ]
   },
@@ -750,7 +1417,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1400.0
+        "AmountInUSD": 1400.0,
+        "productType": "Financial Services",
+        "productName": "Bulk Payment Processing",
+        "description": "Processing fee for corporate bulk payment.",
+        "quantity": 1,
+        "unitPrice": 1400.0,
+        "totalPrice": 1400.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1400.0
       }
     ]
   },
@@ -765,7 +1440,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1600.0
+        "AmountInUSD": 1600.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1600.0,
+        "totalPrice": 1600.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1600.0
       }
     ]
   },
@@ -780,7 +1463,246 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1250.0
+        "AmountInUSD": 1250.0,
+        "productType": "Financial Services",
+        "productName": "Bulk Transaction Fee",
+        "description": "Bulk transaction fee for corporate payment.",
+        "quantity": 1,
+        "unitPrice": 1250.0,
+        "totalPrice": 1250.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1250.0
+      }
+    ]
+  },
+
+  {
+    "id": "2409UBPLC7",
+    "date": "20-09-24",
+    "customerName": "Dutch-Bangla Bank",
+    "createType": "Single",
+    "status": "Pending",
+    "templateName": "Single Transaction Template",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1700.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1700.0,
+        "totalPrice": 1700.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1700.0
+      }
+    ]
+  },
+  {
+    "id": "2409UBPLC8",
+    "date": "21-09-24",
+    "customerName": "Social Islami Bank",
+    "createType": "Bulk",
+    "status": "Approved",
+    "templateName": "Corporate Bulk Payment",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1500.0,
+        "productType": "Financial Services",
+        "productName": "Bulk Transaction Fee",
+        "description": "Bulk transaction fee for corporate payment.",
+        "quantity": 1,
+        "unitPrice": 1500.0,
+        "totalPrice": 1500.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1500.0
+      }
+    ]
+  },
+  {
+    "id": "2409UBPLC9",
+    "date": "22-09-24",
+    "customerName": "City Bank",
+    "createType": "Single",
+    "status": "Approved",
+    "templateName": "Single Transaction Template",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1000.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1000.0,
+        "totalPrice": 1000.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1000.0
+      }
+    ]
+  },
+  {
+    "id": "2409UBPLC10",
+    "date": "23-09-24",
+    "customerName": "Janata Bank",
+    "createType": "Bulk",
+    "status": "Pending",
+    "templateName": "Corporate Bulk Payment",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1300.0,
+        "productType": "Financial Services",
+        "productName": "Bulk Payment Processing",
+        "description": "Processing fee for corporate bulk payment.",
+        "quantity": 1,
+        "unitPrice": 1300.0,
+        "totalPrice": 1300.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1300.0
+      }
+    ]
+  },
+  {
+    "id": "2409UBPLC11",
+    "date": "24-09-24",
+    "customerName": "Standard Chartered",
+    "createType": "Single",
+    "status": "Approved",
+    "templateName": "Single Transaction Template",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1250.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1250.0,
+        "totalPrice": 1250.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1250.0
+      }
+    ]
+  },
+  {
+    "id": "2409UBPLC12",
+    "date": "25-09-24",
+    "customerName": "HSBC",
+    "createType": "Bulk",
+    "status": "Approved",
+    "templateName": "Corporate Bulk Payment",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1100.0,
+        "productType": "Financial Services",
+        "productName": "Bulk Transaction Fee",
+        "description": "Bulk transaction fee for corporate payment.",
+        "quantity": 1,
+        "unitPrice": 1100.0,
+        "totalPrice": 1100.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1100.0
+      }
+    ]
+  },
+  {
+    "id": "2409UBPLC13",
+    "date": "26-09-24",
+    "customerName": "First Security Islami Bank",
+    "createType": "Single",
+    "status": "Pending",
+    "templateName": "Single Transaction Template",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1500.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1500.0,
+        "totalPrice": 1500.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1500.0
+      }
+    ]
+  },
+  {
+    "id": "2409UBPLC14",
+    "date": "27-09-24",
+    "customerName": "Bank Asia",
+    "createType": "Bulk",
+    "status": "Approved",
+    "templateName": "Corporate Bulk Payment",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1400.0,
+        "productType": "Financial Services",
+        "productName": "Bulk Payment Processing",
+        "description": "Processing fee for corporate bulk payment.",
+        "quantity": 1,
+        "unitPrice": 1400.0,
+        "totalPrice": 1400.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1400.0
+      }
+    ]
+  },
+  {
+    "id": "2409UBPLC15",
+    "date": "28-09-24",
+    "customerName": "AB Bank",
+    "createType": "Single",
+    "status": "Pending",
+    "templateName": "Single Transaction Template",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1600.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1600.0,
+        "totalPrice": 1600.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1600.0
+      }
+    ]
+  },
+  {
+    "id": "2409UBPLC16",
+    "date": "29-09-24",
+    "customerName": "Mutual Trust Bank",
+    "createType": "Bulk",
+    "status": "Approved",
+    "templateName": "Corporate Bulk Payment",
+    "sale": [
+      {
+        "SaleNumber": 1,
+        "Month": "September, 2024",
+        "AmountInUSD": 1250.0,
+        "productType": "Financial Services",
+        "productName": "Bulk Transaction Fee",
+        "description": "Bulk transaction fee for corporate payment.",
+        "quantity": 1,
+        "unitPrice": 1250.0,
+        "totalPrice": 1250.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1250.0
       }
     ]
   },
@@ -795,7 +1717,15 @@
       {
         "SaleNumber": 1,
         "Month": "September, 2024",
-        "AmountInUSD": 1550.0
+        "AmountInUSD": 1550.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1550.0,
+        "totalPrice": 1550.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1550.0
       }
     ]
   },
@@ -810,7 +1740,15 @@
       {
         "SaleNumber": 1,
         "Month": "October, 2024",
-        "AmountInUSD": 1300.0
+        "AmountInUSD": 1300.0,
+        "productType": "Financial Services",
+        "productName": "Bulk Payment Processing",
+        "description": "Processing fee for corporate bulk payment.",
+        "quantity": 1,
+        "unitPrice": 1300.0,
+        "totalPrice": 1300.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1300.0
       }
     ]
   },
@@ -825,7 +1763,15 @@
       {
         "SaleNumber": 1,
         "Month": "October, 2024",
-        "AmountInUSD": 1400.0
+        "AmountInUSD": 1400.0,
+        "productType": "Financial Services",
+        "productName": "Transaction Fee",
+        "description": "Transaction fee for single transaction.",
+        "quantity": 1,
+        "unitPrice": 1400.0,
+        "totalPrice": 1400.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1400.0
       }
     ]
   },
@@ -840,7 +1786,15 @@
       {
         "SaleNumber": 1,
         "Month": "October, 2024",
-        "AmountInUSD": 1500.0
+        "AmountInUSD": 1500.0,
+        "productType": "Financial Services",
+        "productName": "Bulk Payment Processing",
+        "description": "Processing fee for corporate bulk payment.",
+        "quantity": 1,
+        "unitPrice": 1500.0,
+        "totalPrice": 1500.0,
+        "VAT": 0,
+        "AmountInUSDWithVAT": 1500.0
       }
     ]
   }

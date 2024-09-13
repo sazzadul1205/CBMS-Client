@@ -1,11 +1,12 @@
-import { toWords } from "number-to-words";
+import PropTypes from "prop-types"; // Import PropTypes
 import { IoEyeOutline } from "react-icons/io5";
-import PropTypes from 'prop-types'; // Import PropTypes
+import { toWords } from "number-to-words";
 
-const ViewInvoice = ({ invoice }) => {
+const ViewApprovedInvoice = ({ invoice }) => {
   if (!invoice) {
     return <div>Loading...</div>; // Handle case when invoice data is not available
   }
+console.log(invoice);
 
   // Calculate Amount in BDT and VAT based on sales data
   const exchangeRate = 117.0; // Example exchange rate, you can modify as needed
@@ -32,29 +33,25 @@ const ViewInvoice = ({ invoice }) => {
           x
         </button>
       </div>
-
       {/* Product Section */}
       <div className="grid grid-cols-2 pt-10 mx-5 text-gray-800">
         <div className="items-center grid grid-cols-2 pb-5">
-          <p className="text-lg font-semibold mr-10">Invoice Code: </p>
-          <span>{invoice.id}</span>
+          <p className="text-lg font-semibold mr-10">Date: </p>
+          <span>{invoice.date}</span>
         </div>
+
         <div className="items-center grid grid-cols-2 pb-5">
           <p className="text-lg font-semibold mr-10">Name: </p>
           <span>{invoice.customerName}</span>
         </div>
         <div className="items-center grid grid-cols-2 pb-5">
-          <p className="text-lg font-semibold mr-10">Date: </p>
-          <span>{invoice.date}</span>
-        </div>
-        <div className="items-center grid grid-cols-2 pb-5">
-          <p className="text-lg font-semibold mr-10">Status: </p>
-          <span>{invoice.status}</span>
+          <p className="text-lg font-semibold mr-10">Net Amount: </p>
+          <span>{netTotalInBDT}</span>
         </div>
       </div>
 
       <p className="bg-gray-300 p-[1px] mx-4"></p>
-      
+
       {/* Product information */}
       <div className="px-5">
         <h3 className="text-xl pt-3">Product Information</h3>
@@ -64,23 +61,17 @@ const ViewInvoice = ({ invoice }) => {
             <thead className="bg-gray-400 text-black">
               <tr className="border border-black text-right">
                 <th className="border border-black">SL No</th>
-                <th className="border border-black">Month</th>
-                <th className="border border-black">Amount in USD</th>
-                <th className="border border-black">Exchange Rate (TK.)</th>
-                <th className="border border-black">Amount in BDT</th>
+                <th className="border border-black">Description</th>
+                <th className="border border-black">Period</th>
+                <th className="border border-black">Total Amount</th>
               </tr>
             </thead>
             <tbody>
               {invoice.sale.map((sale, index) => (
                 <tr className="text-right" key={index}>
                   <th className="border border-black">{index + 1}</th>
+                  <td className="border border-black">{sale.description || sale.Description}</td>
                   <td className="border border-black">{sale.Month}</td>
-                  <td className="border border-black">
-                    {sale.AmountInUSD.toFixed(2)}
-                  </td>
-                  <td className="border border-black">
-                    {exchangeRate.toFixed(2)}
-                  </td>
                   <td className="border border-black">
                     {(sale.AmountInUSD * exchangeRate).toFixed(2)}
                   </td>
@@ -88,7 +79,7 @@ const ViewInvoice = ({ invoice }) => {
               ))}
               {/* Gross Total */}
               <tr className="text-right">
-                <td className="border-black border font-semibold" colSpan={4}>
+                <td className="border-black border font-semibold" colSpan={3}>
                   Gross Total
                 </td>
                 <td className="border border-black">
@@ -97,14 +88,14 @@ const ViewInvoice = ({ invoice }) => {
               </tr>
               {/* VAT */}
               <tr className="text-right">
-                <td className="border-black border font-semibold" colSpan={4}>
+                <td className="border-black border font-semibold" colSpan={3}>
                   VAT
                 </td>
                 <td className="border border-black">{vat.toFixed(2)}</td>
               </tr>
               {/* Net Total */}
               <tr className="text-right">
-                <td className="border-black border font-semibold" colSpan={4}>
+                <td className="border-black border font-semibold" colSpan={3}>
                   Net Total
                 </td>
                 <td className="border border-black font-bold">
@@ -113,7 +104,7 @@ const ViewInvoice = ({ invoice }) => {
               </tr>
               {/* In Words */}
               <tr className="text-right">
-                <td className="border border-black font-bold" colSpan={5}>
+                <td className="border border-black font-bold" colSpan={4}>
                   [In Words: {netTotalInWords}]
                 </td>
               </tr>
@@ -131,8 +122,10 @@ const ViewInvoice = ({ invoice }) => {
   );
 };
 
+export default ViewApprovedInvoice;
+
 // Prop validation
-ViewInvoice.propTypes = {
+ViewApprovedInvoice.propTypes = {
   id: PropTypes.string, // Adjust this based on the actual type of id
   invoice: PropTypes.shape({
     id: PropTypes.string.isRequired,
@@ -147,5 +140,3 @@ ViewInvoice.propTypes = {
     ).isRequired,
   }).isRequired,
 };
-
-export default ViewInvoice;

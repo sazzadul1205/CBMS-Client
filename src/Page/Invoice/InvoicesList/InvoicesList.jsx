@@ -4,346 +4,14 @@ import { useState, useRef, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import ViewInvoice from "./ViewInvoice/ViewInvoice";
 import AddNewInvoice from "./AddNewInvoice/AddNewInvoice";
-
-const invoiceData = [
-  {
-    id: "2408UBPLC9",
-    date: "28-08-24",
-    customerName: "Uttara Bank PLC.",
-    totalAmount: "147,525.00",
-    createType: "Bulk",
-    status: "Approved",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "August, 2024",
-        AmountInUSD: 1200.0,
-      },
-      {
-        SaleNumber: 2,
-        Month: "August, 2024",
-        AmountInUSD: 100.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC10",
-    date: "29-08-24",
-    customerName: "Dhaka Bank Ltd.",
-    totalAmount: "123,456.00",
-    createType: "Single",
-    status: "Pending",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "August, 2024",
-        AmountInUSD: 750.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC11",
-    date: "30-08-24",
-    customerName: "Standard Chartered",
-    totalAmount: "98,765.00",
-    createType: "Bulk",
-    status: "Approved",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "August, 2024",
-        AmountInUSD: 900.0,
-      },
-      {
-        SaleNumber: 2,
-        Month: "August, 2024",
-        AmountInUSD: 150.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC12",
-    date: "31-08-24",
-    customerName: "City Bank",
-    totalAmount: "215,000.00",
-    createType: "Single",
-    status: "Approved",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "August, 2024",
-        AmountInUSD: 1000.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC13",
-    date: "01-09-24",
-    customerName: "Janata Bank",
-    totalAmount: "145,200.00",
-    createType: "Bulk",
-    status: "Pending",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "September, 2024",
-        AmountInUSD: 850.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC14",
-    date: "02-09-24",
-    customerName: "Brac Bank",
-    totalAmount: "99,999.00",
-    createType: "Single",
-    status: "Approved",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "September, 2024",
-        AmountInUSD: 1200.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC15",
-    date: "03-09-24",
-    customerName: "HSBC",
-    totalAmount: "220,345.00",
-    createType: "Bulk",
-    status: "Approved",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "September, 2024",
-        AmountInUSD: 1700.0,
-      },
-      {
-        SaleNumber: 2,
-        Month: "September, 2024",
-        AmountInUSD: 600.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC16",
-    date: "04-09-24",
-    customerName: "AB Bank",
-    totalAmount: "175,500.00",
-    createType: "Single",
-    status: "Pending",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "September, 2024",
-        AmountInUSD: 1300.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC17",
-    date: "05-09-24",
-    customerName: "Dutch-Bangla Bank",
-    totalAmount: "130,000.00",
-    createType: "Bulk",
-    status: "Approved",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "September, 2024",
-        AmountInUSD: 950.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC18",
-    date: "06-09-24",
-    customerName: "Mutual Trust Bank",
-    totalAmount: "110,250.00",
-    createType: "Single",
-    status: "Pending",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "September, 2024",
-        AmountInUSD: 1200.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC19",
-    date: "07-09-24",
-    customerName: "Prime Bank",
-    totalAmount: "160,800.00",
-    createType: "Bulk",
-    status: "Approved",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "September, 2024",
-        AmountInUSD: 1100.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC20",
-    date: "08-09-24",
-    customerName: "Eastern Bank",
-    totalAmount: "200,000.00",
-    createType: "Single",
-    status: "Approved",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "September, 2024",
-        AmountInUSD: 1800.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC21",
-    date: "09-09-24",
-    customerName: "National Bank",
-    totalAmount: "142,000.00",
-    createType: "Bulk",
-    status: "Pending",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "September, 2024",
-        AmountInUSD: 1000.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC22",
-    date: "10-09-24",
-    customerName: "Social Islami Bank",
-    totalAmount: "135,750.00",
-    createType: "Single",
-    status: "Approved",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "September, 2024",
-        AmountInUSD: 950.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC23",
-    date: "11-09-24",
-    customerName: "First Security Islami Bank",
-    totalAmount: "110,400.00",
-    createType: "Bulk",
-    status: "Pending",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "September, 2024",
-        AmountInUSD: 1100.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC24",
-    date: "12-09-24",
-    customerName: "Dutch-Bangla Bank",
-    totalAmount: "165,600.00",
-    createType: "Single",
-    status: "Approved",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "September, 2024",
-        AmountInUSD: 1300.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC25",
-    date: "13-09-24",
-    customerName: "IFIC Bank",
-    totalAmount: "190,500.00",
-    createType: "Bulk",
-    status: "Pending",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "September, 2024",
-        AmountInUSD: 1600.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC26",
-    date: "14-09-24",
-    customerName: "United Commercial Bank",
-    totalAmount: "145,000.00",
-    createType: "Single",
-    status: "Approved",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "September, 2024",
-        AmountInUSD: 1000.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC27",
-    date: "15-09-24",
-    customerName: "Mutual Trust Bank",
-    totalAmount: "200,000.00",
-    createType: "Bulk",
-    status: "Pending",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "September, 2024",
-        AmountInUSD: 1500.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC28",
-    date: "16-09-24",
-    customerName: "NRB Bank",
-    totalAmount: "125,000.00",
-    createType: "Single",
-    status: "Approved",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "September, 2024",
-        AmountInUSD: 1100.0,
-      },
-    ],
-  },
-  {
-    id: "2408UBPLC29",
-    date: "17-09-24",
-    customerName: "City Bank",
-    totalAmount: "185,000.00",
-    createType: "Bulk",
-    status: "Pending",
-    sale: [
-      {
-        SaleNumber: 1,
-        Month: "September, 2024",
-        AmountInUSD: 1800.0,
-      },
-    ],
-  },
-];
+import InvoiceData from "../../../data/Data.json";
 
 const ITEMS_PER_PAGE = 10;
 
 const InvoicesList = () => {
   const [dropdownVisible, setDropdownVisible] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [goToPage, setGoToPage] = useState(1); // Added state for "Go to" input
+  const [goToPage, setGoToPage] = useState(1);
   const dropdownRef = useRef(null);
   const buttonRef = useRef(null);
 
@@ -371,20 +39,20 @@ const InvoicesList = () => {
 
   // Calculate paginated data
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const paginatedData = invoiceData.slice(
+  const paginatedData = InvoiceData.slice(
     startIndex,
     startIndex + ITEMS_PER_PAGE
   );
 
   // Calculate page numbers
-  const totalPages = Math.ceil(invoiceData.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(InvoiceData.length / ITEMS_PER_PAGE);
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   // Handle page change
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
-      setGoToPage(page); // Update "Go to" page number
+      setGoToPage(page);
     }
   };
 
@@ -400,6 +68,19 @@ const InvoicesList = () => {
   const openModal = () => {
     const modal = document.getElementById("View_Invoice");
     if (modal) modal.showModal();
+  };
+
+  // Calculate total amount in BDT and VAT
+  const calculateAmount = (invoice) => {
+    const exchangeRate = 117.0; // Exchange rate
+    const totalAmountInUSD = invoice.sale.reduce(
+      (total, sale) => total + sale.AmountInUSD,
+      0
+    );
+    const totalAmountInBDT = totalAmountInUSD * exchangeRate;
+    const vat = totalAmountInBDT * 0.05; // VAT at 5%
+    const netTotalInBDT = totalAmountInBDT + vat;
+    return { totalAmountInBDT, vat, netTotalInBDT };
   };
 
   return (
@@ -419,9 +100,7 @@ const InvoicesList = () => {
         </div>
         <button
           className="btn ml-2 text-white"
-          onClick={() =>
-            document.getElementById("Add_New_Invoice").showModal()
-          }
+          onClick={() => document.getElementById("Add_New_Invoice").showModal()}
         >
           + Create Invoice
         </button>
@@ -462,7 +141,7 @@ const InvoicesList = () => {
                   <th>Invoice ID</th>
                   <th>Invoice Date</th>
                   <th>Customer Name</th>
-                  <th>Total Amount</th>
+                  <th>Total Amount (BDT)</th>
                   <th>Create Type</th>
                   <th>Status</th>
                   <th>Action</th>
@@ -470,75 +149,80 @@ const InvoicesList = () => {
               </thead>
               {/* Content */}
               <tbody>
-                {paginatedData.map((invoice) => (
-                  <tr key={invoice.id}>
-                    <th>{invoice.id}</th>
-                    <td>{invoice.date}</td>
-                    <td>{invoice.customerName}</td>
-                    <td>{invoice.totalAmount}</td>
-                    <td>
-                      <span
-                        className={`font-semibold px-8 py-1 rounded-full ${
-                          invoice.createType === "Bulk"
-                            ? "text-green-500 bg-green-200"
-                            : "text-blue-500 bg-blue-200"
-                        }`}
-                      >
-                        {invoice.createType}
-                      </span>
-                    </td>
-                    <td>
-                      <span
-                        className={`font-semibold px-5 py-1 rounded-full ${
-                          invoice.status === "Approved"
-                            ? "text-green-500 bg-green-200"
-                            : "text-yellow-500 bg-yellow-200"
-                        }`}
-                      >
-                        {invoice.status}
-                      </span>
-                    </td>
-                    <td className="relative">
-                      <div className="relative inline-block">
-                        <CiMenuKebab
-                          ref={buttonRef}
-                          tabIndex={0}
-                          role="button"
-                          className="cursor-pointer"
-                          onClick={() => toggleDropdown(invoice.id)}
-                        />
-                        {/* Dropdown menu */}
-                        {dropdownVisible === invoice.id && (
-                          <ul
-                            ref={dropdownRef}
+                {paginatedData.map((invoice) => {
+                  const { netTotalInBDT } =
+                    calculateAmount(invoice);
+
+                  return (
+                    <tr key={invoice.id}>
+                      <th>{invoice.id}</th>
+                      <td>{invoice.date}</td>
+                      <td>{invoice.customerName}</td>
+                      <td>{netTotalInBDT.toFixed(2)}</td>
+                      <td>
+                        <span
+                          className={`font-semibold px-8 py-1 rounded-full ${
+                            invoice.createType === "Bulk"
+                              ? "text-green-500 bg-green-200"
+                              : "text-blue-500 bg-blue-200"
+                          }`}
+                        >
+                          {invoice.createType}
+                        </span>
+                      </td>
+                      <td>
+                        <span
+                          className={`font-semibold px-5 py-1 rounded-full ${
+                            invoice.status === "Approved"
+                              ? "text-green-500 bg-green-200"
+                              : "text-yellow-500 bg-yellow-200"
+                          }`}
+                        >
+                          {invoice.status}
+                        </span>
+                      </td>
+                      <td className="relative">
+                        <div className="relative inline-block">
+                          <CiMenuKebab
+                            ref={buttonRef}
                             tabIndex={0}
-                            className="absolute dropdown-content top-full right-0 mt-2 w-32 bg-white shadow-lg border rounded-md z-50"
-                          >
-                            <li
-                              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                              onClick={openModal}
+                            role="button"
+                            className="cursor-pointer"
+                            onClick={() => toggleDropdown(invoice.id)}
+                          />
+                          {/* Dropdown menu */}
+                          {dropdownVisible === invoice.id && (
+                            <ul
+                              ref={dropdownRef}
+                              tabIndex={0}
+                              className="absolute dropdown-content top-full right-0 mt-2 w-32 bg-white shadow-lg border rounded-md z-50"
                             >
-                              View
-                            </li>
-                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                              Update
-                            </li>
-                            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                              Delete
-                            </li>
-                          </ul>
-                        )}
-                      </div>
-                      {/* Modal */}
-                      <dialog id="View_Invoice" className="modal">
-                        <ViewInvoice
-                          key={invoice.id}
-                          invoice={invoice}
-                        ></ViewInvoice>
-                      </dialog>
-                    </td>
-                  </tr>
-                ))}
+                              <li
+                                className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                                onClick={openModal}
+                              >
+                                View
+                              </li>
+                              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                Update
+                              </li>
+                              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                Delete
+                              </li>
+                            </ul>
+                          )}
+                        </div>
+                        {/* Modal */}
+                        <dialog id="View_Invoice" className="modal">
+                          <ViewInvoice
+                            key={invoice.id}
+                            invoice={invoice}
+                          ></ViewInvoice>
+                        </dialog>
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
             <div className="flex justify-between items-center">
@@ -574,8 +258,8 @@ const InvoicesList = () => {
                   .map((page) => (
                     <button
                       key={page}
-                      className={`bg-gray-100 p-1 px-3 text-lg ${
-                        currentPage === page ? "bg-blue-500 text-white" : ""
+                      className={`btn ${
+                        page === currentPage ? "btn-primary" : "btn-outline"
                       }`}
                       onClick={() => handlePageChange(page)}
                     >
@@ -594,10 +278,8 @@ const InvoicesList = () => {
           </div>
         </div>
       </div>
-
-      {/* Modal */}
       <dialog id="Add_New_Invoice" className="modal">
-        <AddNewInvoice></AddNewInvoice>
+        <AddNewInvoice />
       </dialog>
     </div>
   );
