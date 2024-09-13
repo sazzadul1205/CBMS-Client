@@ -1,14 +1,8 @@
-import { useState } from "react";
-import { FaAngleDown, FaRegTrashAlt } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { FaRegTrashAlt } from "react-icons/fa";
+import Select from "react-select";
 
 const AddNewInvoice = () => {
-  const [dropdownOpen, setDropdownOpen] = useState({
-    customerName: false,
-    noteName: false,
-    noteDetails: false,
-    productType: false,
-    productName: false,
-  });
 
   const [notes, setNotes] = useState([{ noteName: "", noteDetails: "" }]);
   const [products, setProducts] = useState([
@@ -22,25 +16,46 @@ const AddNewInvoice = () => {
     },
   ]);
 
-  // Toggle dropdown visibility for specific input
-  const toggleDropdown = (dropdown) => {
-    setDropdownOpen((prevState) => ({
-      ...prevState,
-      [dropdown]: !prevState[dropdown],
-    }));
+  const [vatPercentage, setVatPercentage] = useState(0);
+  const [taxAmount, setTaxAmount] = useState(0);
+  const [grossTotal, setGrossTotal] = useState(0);
+  const [netAmount, setNetAmount] = useState(0);
+
+  const customerOptions = [
+    { value: "customer1", label: "Customer 1" },
+    { value: "customer2", label: "Customer 2" },
+    { value: "customer3", label: "Customer 3" },
+  ];
+
+  const noteOptions = [
+    { value: "note1", label: "Note 1" },
+    { value: "note2", label: "Note 2" },
+    { value: "note3", label: "Note 3" },
+  ];
+
+  const productOptions = [
+    { value: "product1", label: "Product 1" },
+    { value: "product2", label: "Product 2" },
+    { value: "product3", label: "Product 3" },
+  ];
+
+  const handleSelectChange = (index, field, selectedOption) => {
+    const value = selectedOption ? selectedOption.label : "";
+    if (field === "noteName" || field === "noteDetails") {
+      handleNoteChange(index, field, value);
+    } else if (field === "productType" || field === "productName") {
+      handleProductChange(index, field, value);
+    }
   };
 
-  // Handle adding a new note
   const addNote = () => {
     setNotes([...notes, { noteName: "", noteDetails: "" }]);
   };
 
-  // Handle deleting a note
   const deleteNote = (index) => {
     setNotes(notes.filter((_, i) => i !== index));
   };
 
-  // Handle input change for notes
   const handleNoteChange = (index, field, value) => {
     const updatedNotes = notes.map((note, i) =>
       i === index ? { ...note, [field]: value } : note
@@ -48,7 +63,6 @@ const AddNewInvoice = () => {
     setNotes(updatedNotes);
   };
 
-  // Handle adding a new product
   const addProduct = () => {
     setProducts([
       ...products,
@@ -63,12 +77,10 @@ const AddNewInvoice = () => {
     ]);
   };
 
-  // Handle deleting a product
   const deleteProduct = (index) => {
     setProducts(products.filter((_, i) => i !== index));
   };
 
-  // Handle input change for products
   const handleProductChange = (index, field, value) => {
     const updatedProducts = products.map((product, i) =>
       i === index ? { ...product, [field]: value } : product
@@ -76,10 +88,24 @@ const AddNewInvoice = () => {
     setProducts(updatedProducts);
   };
 
-  // Calculate total for each product
   const calculateTotal = (quantity, unitPrice) => {
     return (parseFloat(quantity) || 0) * (parseFloat(unitPrice) || 0);
   };
+
+  const updateTotals = () => {
+    const totalGross = products.reduce(
+      (acc, product) =>
+        acc + calculateTotal(product.quantity, product.unitPrice),
+      0
+    );
+    setGrossTotal(totalGross);
+    setTaxAmount((totalGross * vatPercentage) / 100);
+    setNetAmount(totalGross + taxAmount);
+  };
+
+  useEffect(() => {
+    updateTotals();
+  }, [products, vatPercentage]);
 
   return (
     <div className="modal-box bg-white rounded-none max-w-[1200px] p-0">
@@ -101,31 +127,14 @@ const AddNewInvoice = () => {
           <p className="pb-2">
             Customer Name <span className="text-red-500">*</span>
           </p>
-          <div className="relative w-full max-w-xs">
-            <input
-              type="text"
-              placeholder="Type here"
-              className="input input-bordered w-full bg-white pr-10"
-            />
-            <FaAngleDown
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer"
-              onClick={() => toggleDropdown("customerName")}
-            />
-            {/* Dropdown options for Customer Name */}
-            {dropdownOpen.customerName && (
-              <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded mt-2">
-                <li className="px-4 py-2 cursor-pointer hover:bg-gray-200">
-                  Customer 1
-                </li>
-                <li className="px-4 py-2 cursor-pointer hover:bg-gray-200">
-                  Customer 2
-                </li>
-                <li className="px-4 py-2 cursor-pointer hover:bg-gray-200">
-                  Customer 3
-                </li>
-              </ul>
-            )}
-          </div>
+          <Select
+            options={customerOptions}
+            placeholder="Select Customer"
+            onChange={(selectedOption) =>
+              handleSelectChange(null, "customerName", selectedOption)
+            }
+            className="w-full max-w-xs"
+          />
         </div>
 
         {/* Invoice Date */}
@@ -163,35 +172,17 @@ const AddNewInvoice = () => {
                 <p className="pb-2">
                   Note Name <span className="text-red-500">*</span>
                 </p>
-                <div className="relative w-full max-w-xs">
-                  <input
-                    type="text"
-                    value={note.noteName}
-                    onChange={(e) =>
-                      handleNoteChange(index, "noteName", e.target.value)
-                    }
-                    placeholder="Type here"
-                    className="input input-bordered w-full bg-white pr-10"
-                  />
-                  <FaAngleDown
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer"
-                    onClick={() => toggleDropdown("noteName")}
-                  />
-                </div>
-                {/* Dropdown options for Product Type */}
-                {dropdownOpen.noteName && (
-                  <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded mt-2">
-                    <li className="px-4 py-2 cursor-pointer hover:bg-gray-200">
-                      Product 1
-                    </li>
-                    <li className="px-4 py-2 cursor-pointer hover:bg-gray-200">
-                      Product 2
-                    </li>
-                    <li className="px-4 py-2 cursor-pointer hover:bg-gray-200">
-                      Product 3
-                    </li>
-                  </ul>
-                )}
+                <Select
+                  options={noteOptions}
+                  value={noteOptions.find(
+                    (option) => option.label === note.noteName
+                  )}
+                  placeholder="Select Note"
+                  onChange={(selectedOption) =>
+                    handleSelectChange(index, "noteName", selectedOption)
+                  }
+                  className="w-[220px]"
+                />
               </div>
 
               {/* Note Details */}
@@ -199,35 +190,17 @@ const AddNewInvoice = () => {
                 <p className="pb-2">
                   Note Details <span className="text-red-500">*</span>
                 </p>
-                <div className="relative w-[800px]">
-                  <input
-                    type="text"
-                    value={note.noteDetails}
-                    onChange={(e) =>
-                      handleNoteChange(index, "noteDetails", e.target.value)
-                    }
-                    placeholder="Type here"
-                    className="input input-bordered w-full bg-white"
-                  />
-                  <FaAngleDown
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer"
-                    onClick={() => toggleDropdown("noteDetails")}
-                  />
-                </div>
-                {/* Dropdown options for Product Type */}
-                {dropdownOpen.noteDetails && (
-                  <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded mt-2">
-                    <li className="px-4 py-2 cursor-pointer hover:bg-gray-200">
-                      Product 1
-                    </li>
-                    <li className="px-4 py-2 cursor-pointer hover:bg-gray-200">
-                      Product 2
-                    </li>
-                    <li className="px-4 py-2 cursor-pointer hover:bg-gray-200">
-                      Product 3
-                    </li>
-                  </ul>
-                )}
+                <Select
+                  options={noteOptions}
+                  value={noteOptions.find(
+                    (option) => option.label === note.noteDetails
+                  )}
+                  placeholder="Select Details"
+                  onChange={(selectedOption) =>
+                    handleSelectChange(index, "noteDetails", selectedOption)
+                  }
+                  className="w-[800px]"
+                />
               </div>
 
               {/* Trash Button */}
@@ -263,35 +236,17 @@ const AddNewInvoice = () => {
                 <p className="pb-2">
                   Product Type <span className="text-red-500">*</span>
                 </p>
-                <div className="relative w-full max-w-xs">
-                  <input
-                    type="text"
-                    value={product.productType}
-                    onChange={(e) =>
-                      handleProductChange(index, "productType", e.target.value)
-                    }
-                    placeholder="Select ..."
-                    className="input input-bordered w-full bg-white pr-10"
-                  />
-                  <FaAngleDown
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer"
-                    onClick={() => toggleDropdown("productType")}
-                  />
-                  {/* Dropdown options for Product Type */}
-                  {dropdownOpen.productType && (
-                    <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded mt-2">
-                      <li className="px-4 py-2 cursor-pointer hover:bg-gray-200">
-                        Product 1
-                      </li>
-                      <li className="px-4 py-2 cursor-pointer hover:bg-gray-200">
-                        Product 2
-                      </li>
-                      <li className="px-4 py-2 cursor-pointer hover:bg-gray-200">
-                        Product 3
-                      </li>
-                    </ul>
+                <Select
+                  options={productOptions}
+                  value={productOptions.find(
+                    (option) => option.label === product.productType
                   )}
-                </div>
+                  placeholder="Select Type"
+                  onChange={(selectedOption) =>
+                    handleSelectChange(index, "productType", selectedOption)
+                  }
+                  className="w-40"
+                />
               </div>
 
               {/* Product Name */}
@@ -299,39 +254,21 @@ const AddNewInvoice = () => {
                 <p className="pb-2">
                   Product Name <span className="text-red-500">*</span>
                 </p>
-                <div className="relative w-full max-w-xs">
-                  <input
-                    type="text"
-                    value={product.productName}
-                    onChange={(e) =>
-                      handleProductChange(index, "productName", e.target.value)
-                    }
-                    placeholder="Type here"
-                    className="input input-bordered w-full bg-white pr-10"
-                  />
-                  <FaAngleDown
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer"
-                    onClick={() => toggleDropdown("productName")}
-                  />
-                  {/* Dropdown options for Product Name */}
-                  {dropdownOpen.productName && (
-                    <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded mt-2">
-                      <li className="px-4 py-2 cursor-pointer hover:bg-gray-200">
-                        Product A
-                      </li>
-                      <li className="px-4 py-2 cursor-pointer hover:bg-gray-200">
-                        Product B
-                      </li>
-                      <li className="px-4 py-2 cursor-pointer hover:bg-gray-200">
-                        Product C
-                      </li>
-                    </ul>
+                <Select
+                  options={productOptions}
+                  value={productOptions.find(
+                    (option) => option.label === product.productName
                   )}
-                </div>
+                  placeholder="Select Name"
+                  onChange={(selectedOption) =>
+                    handleSelectChange(index, "productName", selectedOption)
+                  }
+                  className="w-40"
+                />
               </div>
 
               {/* Description */}
-              <div className="w-[800px]">
+              <div>
                 <p className="pb-2">Description</p>
                 <input
                   type="text"
@@ -339,8 +276,7 @@ const AddNewInvoice = () => {
                   onChange={(e) =>
                     handleProductChange(index, "description", e.target.value)
                   }
-                  placeholder="Enter Description"
-                  className="input input-bordered w-full bg-white"
+                  className="input input-bordered w-full max-w-xs bg-white"
                 />
               </div>
 
@@ -355,8 +291,7 @@ const AddNewInvoice = () => {
                   onChange={(e) =>
                     handleProductChange(index, "quantity", e.target.value)
                   }
-                  placeholder="0"
-                  className="input input-bordered w-full bg-white"
+                  className="input input-bordered w-40 bg-white"
                 />
               </div>
 
@@ -371,8 +306,7 @@ const AddNewInvoice = () => {
                   onChange={(e) =>
                     handleProductChange(index, "unitPrice", e.target.value)
                   }
-                  placeholder="0"
-                  className="input input-bordered w-full bg-white"
+                  className="input input-bordered w-40 bg-white"
                 />
               </div>
 
@@ -383,7 +317,7 @@ const AddNewInvoice = () => {
                   type="text"
                   value={calculateTotal(product.quantity, product.unitPrice)}
                   readOnly
-                  className="input input-bordered w-full bg-white"
+                  className="input input-bordered w-40 bg-white"
                 />
               </div>
 
@@ -417,14 +351,18 @@ const AddNewInvoice = () => {
             <p className="font-semibold mr-2">GrossTotal</p>
             <input
               type="text"
-              className="input input-bordered bg-white  w-[300px]"
+              value={grossTotal.toFixed(2)}
+              className="input input-bordered bg-white w-[300px]"
+              readOnly
             />
           </div>
           {/* VAT(%) */}
           <div className="flex items-center mb-2">
             <p className="font-semibold mr-2">VAT(%)</p>
             <input
-              type="text"
+              type="number"
+              value={vatPercentage}
+              onChange={(e) => setVatPercentage(parseFloat(e.target.value))}
               className="input input-bordered bg-white  w-[300px]"
             />
           </div>
@@ -432,16 +370,20 @@ const AddNewInvoice = () => {
           <div className="flex items-center mb-2">
             <p className="font-semibold mr-2">Tax Amount</p>
             <input
-              type="text"
+              type="number"
+              value={taxAmount}
+              onChange={(e) => setTaxAmount(parseFloat(e.target.value) || 0)}
               className="input input-bordered bg-white  w-[300px]"
             />
           </div>
-          {/* Tax Amount */}
+          {/* Net Amount */}
           <div className="flex items-center mb-2">
-            <p className="font-semibold mr-2">Tax Amount</p>
+            <p className="font-semibold mr-2">Net Amount</p>
             <input
               type="text"
+              value={netAmount.toFixed(2)}
               className="input input-bordered bg-white  w-[300px]"
+              readOnly
             />
           </div>
         </div>
@@ -449,7 +391,10 @@ const AddNewInvoice = () => {
 
       {/* Save */}
       <div className="flex  justify-center my-4">
-        <button className="py-3 px-7 bg-black hover:bg-gray-700 text-white font-semibold">
+        <button
+          className="py-3 px-7 bg-black hover:bg-gray-700 text-white font-semibold"
+          onClick={() => document.getElementById("Add_New_Invoice").close()}
+        >
           Save
         </button>
       </div>

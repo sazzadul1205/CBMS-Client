@@ -62,18 +62,18 @@ const Dashboard = () => {
       <div className="my-5 grid grid-cols-3 gap-4">
         {/* Invoices */}
         <div className="flex bg-white items-center justify-center py-10">
-          <MdOutlinePinInvoke className="text-2xl mr-5 text-purple-500" />
+          <MdOutlinePinInvoke className="text-3xl mr-5 text-purple-500" />
           <div className="text-center">
-            <p className="font-bold">286</p>
+            <p className="font-bold text-xl">286</p>
             <p>Total Invoices</p>
           </div>
         </div>
 
         {/* Awaiting for Approval */}
         <div className="flex bg-white items-center justify-center py-10">
-          <FaFileInvoice className="text-2xl mr-5 text-orange-500" />
+          <FaFileInvoice className="text-3xl mr-5 text-orange-500" />
           <div className="text-center">
-            <p className="font-bold">212</p>
+            <p className="font-bold text-xl">212</p>
             <p>Awaiting Approval</p>
           </div>
         </div>
@@ -81,19 +81,19 @@ const Dashboard = () => {
         {/* Total Submission */}
         <div className="flex bg-white items-center justify-center py-10">
           <div className="bg-gray-200 p-2 rounded-full mr-5">
-            <MdOutlinePinInvoke className="text-2xl text-blue-500" />
+            <MdOutlinePinInvoke className="text-3xl text-blue-500" />
           </div>
           <div className="text-center">
-            <p className="font-bold">74</p>
+            <p className="font-bold text-xl">74</p>
             <p>Total Submissions</p>
           </div>
         </div>
 
         {/* Bills Receivable */}
         <div className="flex bg-white items-center justify-center py-10">
-          <FaFileInvoice className="text-2xl mr-5 text-orange-500" />
+          <FaFileInvoice className="text-3xl mr-5 text-orange-500" />
           <div className="text-center">
-            <p className="font-bold">Tk. 11,056,711.00</p>
+            <p className="font-bold text-xl">Tk. 11,056,711.00</p>
             <p>Bills Receivable</p>
           </div>
         </div>
@@ -101,19 +101,19 @@ const Dashboard = () => {
         {/* Collection */}
         <div className="flex bg-white items-center justify-center py-10">
           <div className="bg-gray-200 p-2 rounded-full mr-5">
-            <MdOutlinePinInvoke className="text-2xl text-blue-500" />
+            <MdOutlinePinInvoke className="text-3xl text-blue-500" />
           </div>
           <div className="text-center">
-            <p className="font-bold">Tk. 0.00</p>
+            <p className="font-bold text-xl">Tk. 0.00</p>
             <p>Collection</p>
           </div>
         </div>
 
         {/* Current Receivable */}
         <div className="flex bg-white items-center justify-center py-10">
-          <FaFileInvoice className="text-2xl mr-5 text-orange-500" />
+          <FaFileInvoice className="text-3xl mr-5 text-orange-500" />
           <div className="text-center">
-            <p className="font-bold">Tk. 11,056,711.00</p>
+            <p className="font-bold text-xl">Tk. 11,056,711.00</p>
             <p>Current Receivable</p>
           </div>
         </div>

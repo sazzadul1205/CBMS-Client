@@ -412,9 +412,9 @@ const InvoicesList = () => {
               <IoHomeOutline className="text-blue-500" />
             </li>
             <li>
-              <a className="text-blue-500">Documents</a>
+              <a className="text-blue-500">Invoice</a>
             </li>
-            <li>Add Document</li>
+            <li>Invoice-List</li>
           </ul>
         </div>
         <button
