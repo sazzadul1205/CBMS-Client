@@ -211,6 +211,8 @@ const InvoicesApprove = () => {
               )}
             </tbody>
           </table>
+
+          
           <div className="flex justify-between items-center">
             {/* Go To section */}
             <div className="flex items-center">
