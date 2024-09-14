@@ -7,6 +7,8 @@ import InvoiceStatusUpdate from "../Page/Invoice/InvoiceStatusUpdate/InvoiceStat
 import BulkInvoiceCreate from "../Page/Invoice/BulkInvoiceCreate/BulkInvoiceCreate";
 import PageNotFound from "../Page/PageNotFound/PageNotFound";
 import ReceivablePaymentReceived from "../Page/Receivable/ReceivablePaymentReceived";
+import CustomerList from "../Page/Customer/CustomerList/CustomerList";
+import CustomerProductMapping from "../Page/Customer/CustomerProductMapping/CustomerProductMapping";
 
 export const router = createBrowserRouter([
   {
@@ -37,7 +39,15 @@ export const router = createBrowserRouter([
       {
         path: "/receivable-payment-received",
         element: <ReceivablePaymentReceived></ReceivablePaymentReceived>
-      }
+      },
+      {
+        path: "/customer-list",
+        element: <CustomerList></CustomerList>
+      },
+      {
+        path: "/customer-product-mapping",
+        element: <CustomerProductMapping></CustomerProductMapping>
+      },
     ],
   },
 ]);
