@@ -6,6 +6,7 @@ import InvoicesApprove from "../Page/Invoice/InvoicesApprove/InvoicesApprove";
 import InvoiceStatusUpdate from "../Page/Invoice/InvoiceStatusUpdate/InvoiceStatusUpdate";
 import BulkInvoiceCreate from "../Page/Invoice/BulkInvoiceCreate/BulkInvoiceCreate";
 import PageNotFound from "../Page/PageNotFound/PageNotFound";
+import ReceivablePaymentReceived from "../Page/Receivable/ReceivablePaymentReceived";
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
         path: "/invoices-bulk-create",
         element: <BulkInvoiceCreate></BulkInvoiceCreate>
       },
+      {
+        path: "/receivable-payment-received",
+        element: <ReceivablePaymentReceived></ReceivablePaymentReceived>
+      }
     ],
   },
 ]);
