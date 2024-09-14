@@ -878,7 +878,7 @@ const CustomerList = () => {
               <tbody>
                 {/* Map through the current page's data */}
                 {currentData.map((customer, index) => (
-                  <tr key={index}>
+                  <tr className="border-gray-300" key={index}>
                     <th>{customer.code}</th>
                     <td>{customer.name}</td>
                     <td>{customer.address}</td>
