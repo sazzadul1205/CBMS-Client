@@ -9,6 +9,7 @@ import PageNotFound from "../Page/PageNotFound/PageNotFound";
 import ReceivablePaymentReceived from "../Page/Receivable/ReceivablePaymentReceived";
 import CustomerList from "../Page/Customer/CustomerList/CustomerList";
 import CustomerProductMapping from "../Page/Customer/CustomerProductMapping/CustomerProductMapping";
+import ReportsInvoiceStatistics from "../Page/Reports/ReportsInvoiceStatistics/ReportsInvoiceStatistics";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
       {
         path: "/customer-product-mapping",
         element: <CustomerProductMapping></CustomerProductMapping>
+      },
+      {
+        path: "/reports-invoice-statistics",
+        element: <ReportsInvoiceStatistics></ReportsInvoiceStatistics>
       },
     ],
   },
